@@ -1,0 +1,32 @@
+.button{
+    background: #FE5F00 !important;
+    color: #FFFFFF !important;
+    transition: 0.25s;
+    outline: none;
+}
+
+.button-white{
+    background: #EAF4F7 !important;
+    color: #FE5F00 !important;
+   transition: 0.25s;
+   outline: none;
+  
+}
+
+/* .button:hover,
+.button-white:hover{
+    transform: scale(1.2);
+    opacity: .8;
+} */
+
+.button:hover,
+.button:focus,
+.button-white:focus,
+.button-white:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em rgba(0,0,0,0.2);
+  transform: translateY(-0.25em);
+  opacity: .8;
+}
+
+
+

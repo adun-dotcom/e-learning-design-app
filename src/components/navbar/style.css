@@ -1,0 +1,60 @@
+
+.navbar-header{
+    background-color:#fff !important;
+    min-height: 70px;
+    padding: 20px 80px;
+    max-width: 100%;
+}
+
+nav .nav-brand img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+ .nav-title{
+   color: #212429;
+   font-size: 20px;
+   transition: 0.3s;
+   margin-left: 30px;
+}
+
+#basic-nav-dropdown:hover,
+.nav-title:hover{
+    color: #FE5F00 !important;
+    text-decoration: none;
+
+}
+.nav-input{
+    width: 366px !important;
+    height: 36px;
+    padding: 10px 60px;
+    outline: none;
+    margin-right: 70px;
+    
+}
+
+.form{
+position: relative;
+}
+
+.form span{
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.fa-search{
+    color: #767779 ;
+    
+}
+
+.nav-input::placeholder{
+    font-size: 16px;
+    color:  #495057;
+
+}
