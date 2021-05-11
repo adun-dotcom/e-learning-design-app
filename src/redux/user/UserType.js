@@ -1,0 +1,10 @@
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGOUT = 'LOGOUT'
+export const AUTH = 'AUTH'
+export const LOGIN_REQUEST = 'LOGIN_REQUEST'
+export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+
+// sign up
+export const SIGNUP_USER_REQUEST = 'SIGNUP_USER_REQUEST'
+export const SIGNUP_USER_SUCCESS = 'SIGNUP_USER_SUCCESS'
+export const SIGNUP_USER_FAILURE = 'SIGNUP_USER_FAILURE'

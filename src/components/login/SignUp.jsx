@@ -4,11 +4,12 @@ import './style.css'
 import AppLogo from '../../assets/LEARNDESIGN.svg'
 import MyButton from '../button'
 import Google from '../../assets/google.svg'
-function Register(props) {
+function Register({handleClose, handleOpen}) {
   return (
     <Modal
       className="modal-wrapper "
-      {...props}
+      show={handleOpen}
+      onHide={handleClose}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -55,7 +56,12 @@ function Register(props) {
             <Button href="#" size="lg" block className="modal-google">
               <img src={Google} alt="" className="mr-2" /> Google
             </Button>
-            <p className="pt-5 text-center">Already have an account? <a href="/login" className="login-link">Log in</a></p>
+            <p className="pt-5 text-center">
+              Already have an account?{' '}
+              <a href="/login" className="login-link">
+                Log in
+              </a>
+            </p>
           </div>
         </Modal.Body>
       </div>

@@ -29,11 +29,11 @@ ul{
 
 }
 .nav-input{
-    width: 366px !important;
+    min-width: 400px;
     height: 36px;
     padding: 10px 60px;
     outline: none;
-    margin-right: 70px;
+    /* margin-right: 100px; */
     
 }
 
@@ -57,4 +57,29 @@ position: relative;
     font-size: 16px;
     color:  #495057;
 
+}
+
+.avatar-dropdown{
+   
+    box-shadow: none;
+}
+
+.avatar-dropdown:hover,
+.avatar-dropdown:focus,
+.avatar-toggle:hover,
+.avatar-toggle:focus
+{
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.avatar-menu{
+   
+    margin-left: -50px !important;
+}
+
+.active{
+    color:green !important;
+    background-color: yellow;
+    border: 2px solid blue;
 }

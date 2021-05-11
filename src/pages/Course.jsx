@@ -1,12 +1,12 @@
 import React from 'react'
 import { Card, Row, Col } from 'react-bootstrap'
-import Illustrate from '../../assets/illustrate.svg'
-import { CourseSection } from '../style'
-import StyledCheckbox from '../Checkbox'
+import Illustrate from '../assets/illustrate.svg'
+import { CourseSection } from '../components/style'
+import StyledCheckbox from '../components/Checkbox'
 import Cards from './CourseCard'
-import udemy from '../../assets/udemy.png'
-import cousera from '../../assets/cousera.png'
-import greenBx from '../../assets/green-bx.png'
+import udemy from '../assets/udemy.png'
+import cousera from '../assets/cousera.png'
+import greenBx from '../assets/green-bx.png'
 
 function CoursePg() {
   return (

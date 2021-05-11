@@ -1,9 +1,9 @@
 import React from 'react'
-import MyButton from '../button'
-import SkillGirl from '../../assets/skill-girl.svg'
-import HalfCircle from '../../assets/half-circle.svg'
-import FullCircle from '../../assets/full-circle.svg'
-import { BuildSection } from '../style'
+import MyButton from '../components/button'
+import SkillGirl from '../assets/maindp.png'
+import HalfCircle from '../assets/half-circle.svg'
+import FullCircle from '../assets/full-circle.svg'
+import { BuildSection } from '../components/style'
 function BuildSkill(){
     return (
       <BuildSection className="wrapper">

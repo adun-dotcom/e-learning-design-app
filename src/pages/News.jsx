@@ -1,6 +1,6 @@
 import React from 'react';
-import MyButton from '../button';
-import {NewsSection} from './../style'
+import MyButton from '../components/button';
+import {NewsSection} from '../components/style'
 function NewsLetter() {
     return (
       <NewsSection className="wrapper ">

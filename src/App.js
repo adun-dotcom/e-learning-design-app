@@ -1,11 +1,15 @@
 import Routes from './Routes/index'
 import React from 'react'
-import MyNav from './components/navbar'
-import MyButton from './components/button'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
 function App() {
+  
   return (
     <div>
-      <Routes />
+      <Provider store={store}>
+        <Routes />
+      </Provider>
     </div>
   )
 }

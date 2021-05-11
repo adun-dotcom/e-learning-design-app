@@ -4,17 +4,18 @@ import './style.css'
 import AppLogo from '../../assets/LEARNDESIGN.svg'
 import MyButton from '../button'
 import Google from '../../assets/google.svg'
-function LoginUser(props) {
+function LoginUser({handleClose, handleOpen}) {
   return (
     <Modal
       className="modal-wrapper "
-      {...props}
+      show={handleOpen}
+      onHide={handleClose}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <div className="modal-div">
-        <i class="fas fa-times-circle" onClick={props.onHide}></i>
+        <i class="fas fa-times-circle" onClick={handleClose}></i>
         <Modal.Header className="modal-header">
           <Modal.Title
             id="contained-modal-title-vcenter "
@@ -45,7 +46,13 @@ function LoginUser(props) {
             <hr />
           </div>
           <div>
-            <Button href="#" size="lg" block className="modal-google">
+            <Button
+              href="#"
+              size="lg"
+              block
+              className="modal-google"
+              onClick={handleClose}
+            >
               <img src={Google} alt="" className="mr-2" /> Google
             </Button>
             <p className="pt-5 text-center">

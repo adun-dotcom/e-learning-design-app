@@ -23,7 +23,7 @@ import MyFooter from '../Footer'
 function ViewAll() {
   return (
     <>
-      <MyNav />
+    <MyNav/>
       <Preview className="wrapper preview mb-5">
         <div className="mb-5">
           <h2 className="pb-5">
@@ -126,7 +126,7 @@ function ViewAll() {
           </Col>
         </Row>
       </Preview>
-      <MyFooter />
+      <MyFooter/>
     </>
   )
 }

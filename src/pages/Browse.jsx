@@ -1,8 +1,8 @@
 import React from 'react'
-import ImageGirl from '../../assets/image-girl.png'
-import Icons from '../../assets/icons.png'
-import Graph from '../../assets/graph.png'
-import { BrowseSection } from '../style'
+import ImageGirl from '../assets/image-girl.png'
+import Icons from '../assets/icons.png'
+import Graph from '../assets/graph.png'
+import { BrowseSection } from '../components/style'
 import { Row, Col } from 'react-bootstrap'
 function BrowseSkill() {
   return (
