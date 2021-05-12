@@ -42,4 +42,30 @@ export default makeStyles((theme) => ({
     marginTop: 80,
     fontSize: 14,
   },
+
+  authBtn:{
+    width: '100%',
+    marginTop: '30px'
+  },
+
+  orDiv: {
+    display:"flex",
+    justifyContent:'space-between',
+    margin: '10px 0'
+  },
+
+  hr:{
+    width: '80%'
+  },
+
+  google:{
+    background: "#ffff !important",
+    color: '#000 !important'
+  },
+
+  brandName:{
+    display: 'flex',
+    justifyContent: 'center',
+    marginBottom: '15px'
+  }
 }))

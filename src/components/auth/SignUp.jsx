@@ -4,8 +4,8 @@ import {
   FormControl,
   InputLabel,
   OutlinedInput,
-  Link,
 } from '@material-ui/core'
+import { Navbar } from 'react-bootstrap'
 import Visibility from '@material-ui/icons/Visibility'
 import VisibilityOff from '@material-ui/icons/VisibilityOff'
 import InputAdornment from '@material-ui/core/InputAdornment'
@@ -13,9 +13,8 @@ import IconButton from '@material-ui/core/IconButton'
 import MyButton from '../button'
 import AppLogo from '../../assets/LEARNDESIGN.svg'
 import clsx from 'clsx'
-import Axios from 'axios'
+import { Link, useHistory } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
 import GoogleAuth from './GoogleAuth'
 import useStyles from './style'
 import ClipLoader from 'react-spinners/ClipLoader'
@@ -58,23 +57,52 @@ export default function SignupPg() {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div className={classes.subDiv}>
-        <div className="text-center mb-5">
+        <Navbar.Brand
+          href="/"
+          component={Link}
+          to="/"
+          className={classes.brandName}
+        >
           <img src={AppLogo} alt="" />
-        </div>
+        </Navbar.Brand>
 
         <TextField
-          id="outlined-multiline-flexible" className={classes.textField} label="First Name" multiline name="firstName" rowsMax={4} value={values.firstName} onChange={handleChange} variant="outlined"
-        />
-        <TextField
-          id="outlined-multiline-flexible" className={classes.textField} label="Last Name" multiline name="lastName" rowsMax={4} value={values.lastName} onChange={handleChange} variant="outlined"
+          id="outlined-multiline-flexible"
+          className={classes.textField}
+          label="First Name"
+          multiline
+          name="firstName"
+          rowsMax={4}
+          value={values.firstName}
+          onChange={handleChange}
+          variant="outlined"
         />
         <TextField
           id="outlined-multiline-flexible"
-className={classes.textField} label="Email Address" multiline name="email" rowsMax={4} value={values.email} onChange={handleChange} variant="outlined"
+          className={classes.textField}
+          label="Last Name"
+          multiline
+          name="lastName"
+          rowsMax={4}
+          value={values.lastName}
+          onChange={handleChange}
+          variant="outlined"
+        />
+        <TextField
+          id="outlined-multiline-flexible"
+          className={classes.textField}
+          label="Email Address"
+          multiline
+          name="email"
+          rowsMax={4}
+          value={values.email}
+          onChange={handleChange}
+          variant="outlined"
         />
 
         <FormControl
-          className={clsx(classes.margin, classes.textField)} variant="outlined"
+          className={clsx(classes.margin, classes.textField)}
+          variant="outlined"
         >
           <InputLabel htmlFor="outlined-adornment-password">
             Password
@@ -84,7 +112,7 @@ className={classes.textField} label="Email Address" multiline name="email" rowsM
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}
             name="password"
-            onChange={ handleChange}
+            onChange={handleChange}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -101,20 +129,17 @@ className={classes.textField} label="Email Address" multiline name="email" rowsM
           />
         </FormControl>
         <MyButton
-          text={
-            loading ? (
-              <ClipLoader loading={loading} size={20}  />
-            ) : (
-              'signup'
-            )
-          }
-          clsName="button border-0 btn btn-lg modal-button mt-3"
+          text={loading ? <ClipLoader loading={loading} size={20} /> : 'signup'}
+          clsName={clsx(
+            'button border-0 btn btn-lg ',
+            classes.authBtn
+          )}
           onClick={onSubmit}
         />
-        <div className="or-separator my-2">
-          <hr />
-          <div>or</div>
-          <hr />
+        <div className={classes.orDiv}>
+          <hr className={classes.hr} />
+          <div className="px-3">or</div>
+          <hr className={classes.hr} />
         </div>
         <GoogleAuth />
       </div>

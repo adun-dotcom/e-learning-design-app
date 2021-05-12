@@ -1,11 +1,11 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { TextField } from '@material-ui/core'
 import MyButton from '../button'
 import AppLogo from '../../assets/LEARNDESIGN.svg'
 import Email from '../../assets/email.svg'
 import clsx from 'clsx'
 import useStyles from './style'
+import {Navbar} from 'react-bootstrap'
+import { Link, useHistory } from 'react-router-dom'
 
 export default function VerifyPwd() {
   const classes = useStyles()
@@ -13,12 +13,19 @@ export default function VerifyPwd() {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div className={classes.subDiv}>
-        <div className="text-center mb-5">
+        <Navbar.Brand
+          href="/"
+          component={Link}
+          to="/"
+          className={classes.brandName}
+        >
           <img src={AppLogo} alt="" />
-        </div>
-        <div className="text-center">
+        </Navbar.Brand>
+        <div className="text-center mt-5">
           <img src={Email} alt="" />
-          <p className={clsx("fw-bold mt-5", classes.forgotText)}>Check your mail</p>
+          <p className={clsx('fw-bold mt-5', classes.forgotText)}>
+            Check your mail
+          </p>
           <p className={classes.forgotText}>
             We have sent a password recover instructions to your email
           </p>
@@ -26,7 +33,10 @@ export default function VerifyPwd() {
 
         <MyButton
           text="Open email app"
-          clsName="button border-0 btn btn-lg modal-button mt-5"
+          clsName={clsx(
+            'button border-0 btn btn-lg ',
+            classes.authBtn
+          )}
           path="/reset"
         />
 

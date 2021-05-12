@@ -13,7 +13,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import IconButton from '@material-ui/core/IconButton'
 import MyButton from '../button'
 import Google from '../../assets/google.svg'
-import { Button } from 'react-bootstrap'
+import { Navbar } from 'react-bootstrap'
 import AppLogo from '../../assets/LEARNDESIGN.svg'
 import clsx from 'clsx'
 import useStyles from './style'
@@ -40,9 +40,14 @@ export default function ResetPwd() {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div className={classes.subDiv}>
-        <div className="text-center mb-5">
+        <Navbar.Brand
+          href="/"
+          component={Link}
+          to="/"
+          className={classes.brandName}
+        >
           <img src={AppLogo} alt="" />
-        </div>
+        </Navbar.Brand>
 
         <TextField
           id="outlined-multiline-flexible"
@@ -112,7 +117,10 @@ export default function ResetPwd() {
         <MyButton
           text="Reset password"
           path="/"
-          clsName="button border-0 btn btn-lg modal-button mt-5"
+          clsName={clsx(
+            'button border-0 btn btn-lg ',
+            classes.authBtn
+          )}
         />
         <span className={clsx('d-block text-center', classes.signupSpan)}>
           Remember password

@@ -7,6 +7,8 @@ import MyButton from '../button'
 import AppLogo from '../../assets/LEARNDESIGN.svg'
 import clsx from 'clsx'
 import useStyles from './style'
+import { Link, useHistory } from 'react-router-dom'
+import { Navbar } from 'react-bootstrap'
 
 export default function ForgotPwd() {
   const classes = useStyles()
@@ -25,9 +27,14 @@ export default function ForgotPwd() {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div className={classes.subDiv}>
-        <div className="text-center mb-5">
+        <Navbar.Brand
+          href="/"
+          component={Link}
+          to="/"
+          className={classes.brandName}
+        >
           <img src={AppLogo} alt="" />
-        </div>
+        </Navbar.Brand>
         <div>
           <p className={classes.forgotText}>
             Enter the email associated with your account and we’ll send an email
@@ -46,14 +53,17 @@ export default function ForgotPwd() {
         />
         <MyButton
           text="Send"
-          clsName="button border-0 btn btn-lg modal-button mt-5"
-          path='/verify'
+          clsName={clsx(
+            'button border-0 btn btn-lg ',
+            classes.authBtn
+          )}
+          path="/verify"
         />
 
         <span className={clsx('d-block text-center', classes.signupSpan)}>
-          Remember password  
+          Remember password
           <a className={classes.link} href="/login">
-             log in
+            log in
           </a>{' '}
         </span>
       </div>

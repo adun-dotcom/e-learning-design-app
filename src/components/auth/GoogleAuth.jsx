@@ -4,9 +4,10 @@ import { Button } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom'
 import GoogleLogin from 'react-google-login'
 import { useDispatch } from 'react-redux'
-
+import useStyles from './style'
 
 export default function GoogleAuth() {
+  const classes = useStyles()
   const dispatch = useDispatch()
   const { push } = useHistory()
 
@@ -28,22 +29,22 @@ export default function GoogleAuth() {
   }
 
   return (
-        <GoogleLogin
-          clientId="811836115569-ihjc68k3rm55sus3qqoco3ghlc2cgh2f.apps.googleusercontent.com"
-          render={(renderProps) => (
-            <Button
-              size="lg"
-              block
-              className="modal-google"
-              onClick={renderProps.onClick}
-              disabled={renderProps.disabled}
-            >
-              <img src={Google} alt="" className="mr-2" /> Google
-            </Button>
-          )}
-          onFailure={googleFailure}
-          onSuccess={googleSuccess}
-          cookiePolicy="single_host_origin"
-        />
+    <GoogleLogin
+      clientId="811836115569-ihjc68k3rm55sus3qqoco3ghlc2cgh2f.apps.googleusercontent.com"
+      render={(renderProps) => (
+        <Button
+          size="lg"
+          block
+          className={classes.google}
+          onClick={renderProps.onClick}
+          disabled={renderProps.disabled}
+        >
+          <img src={Google} alt="" className="mr-2" /> Google
+        </Button>
+      )}
+      onFailure={googleFailure}
+      onSuccess={googleSuccess}
+      cookiePolicy="single_host_origin"
+    />
   )
 }
