@@ -19,13 +19,22 @@ import GoogleAuth from './GoogleAuth'
 import useStyles from './style'
 import ClipLoader from 'react-spinners/ClipLoader'
 import { signup} from '../../redux/user/account'
-
+import {Validation} from './validation'
+import TransitionsSnackbar from '../AlertBar'
+import {alertShow, alertHide} from '../../redux/alertBar/alertAction'
 
 export default function SignupPg() {
   const classes = useStyles()
   const dispatch = useDispatch()
  const [loading, setLoading] = useState(false)
   const history = useHistory()
+  const [errors, setErrors] = useState({
+    email: false,
+    password: true,
+    firstName: false,
+    lastName: false,
+    password: false,
+  })
   const [values, setValues] = React.useState({
     email: '',
     password: '',
@@ -49,8 +58,21 @@ export default function SignupPg() {
 
   const onSubmit = (e)=>{
     e.preventDefault()
-    setLoading(true)
-    dispatch(signup(values, history))
+    const validate = new Validation(values)
+    console.log(validate.emptyFields())
+    if(validate.emptyFields()){
+     return dispatch(alertShow('Form fields are required 💥'))
+    }
+
+    if(!validate.isValidMail()){
+     return dispatch(alertShow('invalid email 😒'))
+    }
+
+    if(validate.validatePwd()){
+     return dispatch(alertShow('password is weak ‼❌'))
+    }
+      setLoading(true)
+      dispatch(signup(values, history))
   }
 
   
@@ -68,6 +90,8 @@ export default function SignupPg() {
 
         <TextField
           id="outlined-multiline-flexible"
+          error={false}
+          helperText={errors.firstName ? 'inavlid name' : ''}
           className={classes.textField}
           label="First Name"
           multiline
@@ -89,11 +113,13 @@ export default function SignupPg() {
           variant="outlined"
         />
         <TextField
+          error={errors.email}
           id="outlined-multiline-flexible"
           className={classes.textField}
           label="Email Address"
           multiline
           name="email"
+          helperText={errors.email ? 'inavlid email' : ''}
           rowsMax={4}
           value={values.email}
           onChange={handleChange}
@@ -108,11 +134,13 @@ export default function SignupPg() {
             Password
           </InputLabel>
           <OutlinedInput
+            error={errors.password}
             id="outlined-adornment-password"
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}
             name="password"
             onChange={handleChange}
+            helperText={errors.password ? 'password too short' : ''}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -130,10 +158,7 @@ export default function SignupPg() {
         </FormControl>
         <MyButton
           text={loading ? <ClipLoader loading={loading} size={20} /> : 'signup'}
-          clsName={clsx(
-            'button border-0 btn btn-lg ',
-            classes.authBtn
-          )}
+          clsName={clsx('button border-0 btn btn-lg ', classes.authBtn)}
           onClick={onSubmit}
         />
         <div className={classes.orDiv}>
@@ -143,6 +168,7 @@ export default function SignupPg() {
         </div>
         <GoogleAuth />
       </div>
+     
     </form>
   )
 }

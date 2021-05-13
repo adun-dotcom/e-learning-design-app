@@ -90,7 +90,8 @@ export default makeStyles((theme) => ({
 
   profileText: {
     fontWeight: 500,
-    color: '#212429',
+    color: '#212429 !important',
+    textDecoration:'none !important'
   },
 
   profileLight: {

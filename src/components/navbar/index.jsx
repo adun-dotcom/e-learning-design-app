@@ -12,6 +12,7 @@ import clsx from 'clsx'
 import SimpleMenu from './Profile'
 import Profile from './Profile'
 
+
 function MyNav() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
   console.log(user)

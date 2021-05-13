@@ -6,3 +6,16 @@
 .design-preview{
   margin-top: 200px;
 }
+
+.drop-pg {
+  color:red !important ;
+}
+.drop-pg:hover {
+  color:green !important;
+  text-decoration: none;
+
+}
+
+.drop-pg:hover .drop{
+display: block !important;
+}

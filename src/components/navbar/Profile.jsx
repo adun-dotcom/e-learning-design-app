@@ -11,7 +11,7 @@ import PersonIcon from '@material-ui/icons/Person'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
 import Typography from '@material-ui/core/Typography'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
-
+import { Link } from 'react-router-dom'
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #4ABBCD',
@@ -37,10 +37,10 @@ const StyledMenu = withStyles({
 const StyledMenuItem = withStyles((theme) => ({
   root: {
     '&:focus': {
-      backgroundColor: theme.palette.primary.main,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.palette.common.white,
-      },
+      
+      // '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+      //   color: theme.palette.common.white,
+      // },
     },
   },
 }))(MenuItem)
@@ -92,7 +92,7 @@ export default function Profile({ logout }) {
             <ListItemText
               disableTypography
               primary={
-                <Typography type="body2" className={classes.profileText}>
+                <Typography component={Link} to='/profile' type="body2" className={classes.profileText}>
                   Profile
                 </Typography>
               }

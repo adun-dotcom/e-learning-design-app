@@ -1,26 +1,29 @@
-import React, {useState} from 'react'
-import {NavDropdown } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Dropdown, FormControl, NavDropdown } from 'react-bootstrap'
 import { DropdownSubmenu, NavDropdownMenu } from 'react-bootstrap-submenu'
-const ExploreDropdown = () => {
-  
-const [show, setShow] = useState(false)
-const showDropdown = (e) => {
-  setShow(!show)
-  
-}
-const hideDropdown = (e) => {
-  setShow(false)
-}
-  return (
-    <NavDropdownMenu
-      className="ml-5  nav-title"
-      title="Explore"
-      id="collasible-nav-dropdown"
-      // show={show}
-      //  onMouseLeave={() => setShowDropdown(false)}
-      // onMouseOver={() => setShowDropdown(true)}
+const DropdownPg= () => {
+ 
+  const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+    <a
+    className="drop-pg"
+      href=""
+      ref={ref}
+      onMouseOver={(e) => {
+        e.preventDefault()
+        onClick(e)
+      }}
     >
-      <div>
+      {children}
+      
+    </a>
+  ))
+  return (
+    <Dropdown className="drop-pg">
+      <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
+        Explore
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu className="drop">
         <DropdownSubmenu href="#action/3.7" title="Courses">
           <NavDropdown.Item href="#action/8.1">Adobe XD</NavDropdown.Item>
           <NavDropdown.Item href="#action/8.1">Figma</NavDropdown.Item>
@@ -59,9 +62,9 @@ const hideDropdown = (e) => {
           <NavDropdown.Item href="#action/8.1">Icons</NavDropdown.Item>
           <NavDropdown.Item href="#action/8.1">Illustrations</NavDropdown.Item>
         </DropdownSubmenu>
-      </div>
-    </NavDropdownMenu>
+      </Dropdown.Menu>
+    </Dropdown>
   )
 }
 
-export default ExploreDropdown
+export default DropdownPg

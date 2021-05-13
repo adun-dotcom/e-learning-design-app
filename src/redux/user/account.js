@@ -7,6 +7,7 @@ export const signin = (values, history)=> async (dispatch)=>{
     try {
     dispatch({ type: AUTH, data})
         history.push('/')
+        // dispatch(alertShow('Welcome back'))
     } catch (error) {
         console.log(error)
     }

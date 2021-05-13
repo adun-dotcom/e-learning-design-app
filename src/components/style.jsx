@@ -142,32 +142,31 @@ export const BrowseSection = styled.section`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.23s;
   }
-  
 `
 
 export const NewsSection = styled.section`
   background: #eaf4f7;
-    height:568px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  height: 568px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .container {
     background: #3c8d3a;
-    height:404px; 
+    height: 404px;
   }
 
-.container p{
-    font-size:30px;
-    font-weight:500;
-    color:#ffff;
-}
-.container input{
-    width:575px;
-    height:52px;
-    margin:40px auto;
-    outline:none;
-}
+  .container p {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffff;
+  }
+  .container input {
+    width: 575px;
+    height: 52px;
+    margin: 40px auto;
+    outline: none;
+  }
 `
 
 export const FooterSection = styled.footer`
@@ -198,7 +197,7 @@ export const FooterSection = styled.footer`
 
   hr {
     width: 100%;
-    height:2px;
+    height: 2px;
     background-color: #4abbcd;
   }
 
@@ -210,7 +209,7 @@ export const FooterSection = styled.footer`
 `
 
 export const LearnSection = styled.section`
- background:white;
+  background: white;
   .container {
     width: 704px;
   }
@@ -248,22 +247,22 @@ export const LearnSection = styled.section`
 export const TeamSection = styled.section`
   background: rgba(234, 244, 247, 1);
 
-.team-images{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:80px;
-}
+  .team-images {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+  }
 
-h4{
-  margin-top:20px;
-  font-size:30px;
-  font-weight:600;
-}
+  h4 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
 
-p{
-  font-size:24px;
-}
+  p {
+    font-size: 24px;
+  }
 `
 
 export const CourseSection = styled.section`
@@ -281,7 +280,7 @@ export const CourseSection = styled.section`
 
   .course-wrap {
     margin-top: 60px;
-    margin-left:5px;
+    margin-left: 5px;
     width: 100%;
   }
   .search-filter {
@@ -290,18 +289,17 @@ export const CourseSection = styled.section`
     background: rgba(234, 244, 247, 1);
     border-radius: 6px;
     padding: 30px 0;
-    margin-right:50px;
+    margin-right: 50px;
   }
 
-  
   p {
     padding-left: 20px;
     font-size: 20px;
     font-weight: 500;
   }
 
-  .checkbox-wrapper{
-    margin-left:20px;
+  .checkbox-wrapper {
+    margin-left: 20px;
   }
   hr {
     width: 100%;
@@ -382,9 +380,9 @@ export const CardGroup = styled.div`
 
   a {
     color: #495057;
-    text-decoration:underline;
-    font-size:18px;
-    margin-top:-10px;
+    text-decoration: underline;
+    font-size: 18px;
+    margin-top: -10px;
   }
 
   .saved-span {
@@ -396,10 +394,64 @@ export const CardGroup = styled.div`
   }
 `
 
-export const RecommendSection = styled.section`
-p{
+// export const RecommendSection = styled.section`
+// p{
 
-  
-}
+// }
 
+// `
+
+export const ProfileSection = styled.section`
+  padding:70px 200px;
+ .profile-flex{
+   margin-bottom:80px;
+   /* width:80%; */
+   max-width:100%;
+   display:flex;
+   justify-content:space-between;
+   align-items:flex-end
+ }
+  .profile-user {
+    padding: 40px 10px;
+    height: 430px;
+    width: 290px;
+    border-radius: 6px;
+    background: #eaf4f7;
+    
+  }
+
+  .person-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar {
+    height: 192px;
+    width: 192px;
+    object-fit: contain;
+  }
+
+  .user-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #212429;
+    margin-top: 10px;
+  }
+
+  .user-email {
+    font-size: 20px;
+    font-weight: 400;
+    color: #acb5bd;
+    margin-top: -20px;
+  }
+
+  .profile-form{
+    width:609px;
+  }
+
+  .saved-courses{
+
+  }
 `
