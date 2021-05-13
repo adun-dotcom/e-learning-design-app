@@ -193,6 +193,7 @@ export const FooterSection = styled.footer`
 
   a:hover {
     color: #fe5f00;
+    text-decoration:none;
   }
 
   hr {

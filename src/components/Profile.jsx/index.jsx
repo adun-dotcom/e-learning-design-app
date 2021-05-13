@@ -5,14 +5,11 @@ import Cards from '../../pages/CourseCard'
 import udemy from '../../assets/udemy.png'
 import { ProfileSection } from '../style'
 import InfoPg from './Info'
-import DropdownPg from '../DropdownDemo'
-
 
 function ProfilePg() {
     return (
       <div>
         <MyNav />
-        <DropdownPg/>
         <ProfileSection className="wrapper">
           <InfoPg />
           <div className="saved-courses">

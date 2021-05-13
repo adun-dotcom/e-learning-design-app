@@ -1,49 +1,12 @@
 import React, { useState } from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import IconButton from '@material-ui/core/IconButton'
 import { Avatar } from '@material-ui/core'
 import useStyles from './styles'
 import PersonIcon from '@material-ui/icons/Person'
 import BookmarkIcon from '@material-ui/icons/Bookmark'
-import Typography from '@material-ui/core/Typography'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import { Link } from 'react-router-dom'
-const StyledMenu = withStyles({
-  paper: {
-    border: '1px solid #4ABBCD',
-    width: 237
-  },
-
-})((props) => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: 'bottom',
-      horizontal: 'center',
-    }}
-    transformOrigin={{
-      vertical: 'top',
-      horizontal: 'center',
-    }}
-    {...props}
-  />
-))
-
-const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    '&:focus': {
-      
-      // '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-      //   color: theme.palette.common.white,
-      // },
-    },
-  },
-}))(MenuItem)
+import clsx from 'clsx'
 
 export default function Profile({ logout }) {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
@@ -61,74 +24,35 @@ export default function Profile({ logout }) {
 
   return (
     <div>
-      <IconButton
-        aria-label="show 4 new mails"
-        color="inherit"
-        onClick={handleClick}
-        aria-controls="customized-menu"
-        aria-haspopup="true"
-      >
+      <div class="dropdown">
         <Avatar
           alt={user.result.name}
           src={user.result.imageUrl}
-          className={classes.avatar}
+          className={clsx(classes.avatar, 'dropbtn')}
         >
           {user.result.name.charAt(0)}
         </Avatar>
-      </IconButton>
-
-      <StyledMenu
-        id="customized-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <div>
-          <StyledMenuItem>
-            <ListItemIcon>
-              <PersonIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText
-              disableTypography
-              primary={
-                <Typography component={Link} to='/profile' type="body2" className={classes.profileText}>
-                  Profile
-                </Typography>
-              }
-            />
-          </StyledMenuItem>
-          <StyledMenuItem>
-            <ListItemIcon>
-              <BookmarkIcon fontSize="small" />
-            </ListItemIcon>
-
-            <ListItemText
-              disableTypography
-              primary={
-                <Typography type="body2" className={classes.profileLight}>
-                  Saved courses
-                </Typography>
-              }
-            />
-          </StyledMenuItem>
-
-          <div className={classes.dived}></div>
-          <StyledMenuItem onClick={logout}>
-            <ListItemIcon>
-              <ExitToAppIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText
-              disableTypography
-              primary={
-                <Typography type="body2" className={classes.profileLight}>
-                  Logout
-                </Typography>
-              }
-            />
-          </StyledMenuItem>
+        <div class="profile-content">
+          <a href="/profile">
+            <PersonIcon fontSize="small" />
+            <span
+              component={Link}
+              to="/profile"
+            >
+              Profile
+            </span>
+          </a>
+          <a href="#">
+            <BookmarkIcon fontSize="small" />
+            <span >Saved courses</span>
+          </a>
+          <hr />
+          <a href="#" onClick={logout}>
+            <ExitToAppIcon fontSize="small" />
+            <span>Logout</span>
+          </a>
         </div>
-      </StyledMenu>
+      </div>
     </div>
   )
 }

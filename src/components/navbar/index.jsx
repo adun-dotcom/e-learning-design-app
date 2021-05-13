@@ -4,16 +4,16 @@ import { Navbar, Nav, Form, FormControl } from 'react-bootstrap'
 import AppLogo from '../../assets/LEARNDESIGN.svg'
 import { Link , useHistory, useLocation} from 'react-router-dom'
 import MyButton from '../button'
-import ExploreDropdown from './ExploreDropdown'
 import Notify from './Notify'
 import {useSelector, useDispatch} from 'react-redux'
 import useStyles from './styles'
 import clsx from 'clsx'
 import SimpleMenu from './Profile'
 import Profile from './Profile'
+import DropdownPg from './ExploreDropdown'
 
 
-function MyNav() {
+function MyNav({active}) {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
   console.log(user)
   const { push } = useHistory()
@@ -41,9 +41,17 @@ function MyNav() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <ExploreDropdown />
-          <Nav.Link href="/learnpg" className={clsx('nav-title')}>
+        <Nav className="mr-auto align-items-center">
+          <Nav.Link
+            href="/learnpg"
+            className={clsx('nav-title', active === "/explore" ? 'active' : '')}
+          >
+            <DropdownPg />
+          </Nav.Link>
+          <Nav.Link
+            href="/learnpg"
+            className={clsx('nav-title', active === "/learn" ? 'active' : '')}
+          >
             Learn more
           </Nav.Link>
           <Form inline className="form ml-5">
@@ -57,12 +65,11 @@ function MyNav() {
             />
           </Form>
         </Nav>
-     
+
         {user ? (
-          
           <div>
             <span className="d-flex align-items-center">
-              <Profile logout={logout}/>
+              <Profile logout={logout} />
               <Notify />
             </span>
           </div>

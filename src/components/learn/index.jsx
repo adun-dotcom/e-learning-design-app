@@ -8,8 +8,8 @@ import OurTeam from './Team'
 function LearnPg() {
     return (
       <>
-     <MyNav/>
-        <LearnMore />
+     <MyNav active="/learn"/>
+        <LearnMore  />
         <OurTeam />
         <MyFooter/>
       </>
