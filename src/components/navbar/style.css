@@ -164,10 +164,8 @@ nav .nav-brand img {
 .fa-chevron-right{
     font-size: 14px;
 }
-
-
-p:hover ,
-.fa-chevron-right:hover{
+ 
+.spanned-link:hover{
   color: #4ABBCD;
 }
 
