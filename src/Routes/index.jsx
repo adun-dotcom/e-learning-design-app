@@ -32,7 +32,7 @@ const Routes = () => {
         
         <PrivateRoute
           authed={auth.loggingIn}
-          path="/explorepg"
+          path="/explorepg/:courses"
           component={ExplorePg}
         />
         <PrivateRoute

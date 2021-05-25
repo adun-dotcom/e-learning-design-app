@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, Row, Col } from 'react-bootstrap'
 import Illustrate from '../assets/illustrate.svg'
 import { CourseSection } from '../components/style'
@@ -7,8 +7,35 @@ import Cards from './CourseCard'
 import udemy from '../assets/udemy.png'
 import cousera from '../assets/cousera.png'
 import greenBx from '../assets/green-bx.png'
-
+import { instance } from '../redux/api/config'
 function CoursePg() {
+  // console.log(window.location.pathname)
+  const pathArray = window.location.pathname.split('/')
+  const pathName = pathArray[pathArray.length - 1]
+  console.log(pathName)
+  // console.log(pathName)
+  const [getCourses, setGetCourses] = useState([])
+  const getData = async () => {
+    try {
+      const result = await instance.get('/courses', {
+        headers: {
+          'x-access-token': JSON.parse(localStorage.getItem('profile')).token,
+        },
+      })
+      console.log(result.data)
+      const category = result.data.courses.filter((type) => {
+        return type.Category === pathName
+      })
+      setGetCourses(category)
+      // console.log(category, 'category')
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
   return (
     <CourseSection className="wrapper">
       <Card className="course-img">
@@ -35,53 +62,25 @@ function CoursePg() {
           </div>
         </Col>
         <Col className="tutorials" xs={12} md={8}>
-          <h4>Top illustrator tutorials</h4>
-          <div>
-            <Cards
-              title="Illustration"
-              name="Adunola Odetola"
-              link="udemy.com"
-              img={udemy}
-            >
-              <span>
-                <i class="fas fa-bookmark"></i>
-                Saved
-              </span>
-            </Cards>
-            <Cards
-              title="Illustration"
-              name="Adunola Odetola"
-              link="cousera.com"
-              img={cousera}
-            >
-              <span>
-                <i class="fas fa-bookmark"></i>
-                Saved
-              </span>
-            </Cards>
-            <Cards
-              title="Illustration"
-              name="Adunola Odetola"
-              link="udemy.com"
-              img={greenBx}
-            >
-              <span>
-                <i class="far fa-bookmark"></i>
-                Save
-              </span>
-            </Cards>
-            <Cards
-              title="Illustration"
-              name="Adunola Odetola"
-              link="udemy.com"
-              img={greenBx}
-            >
-              <span>
-                <i class="far fa-bookmark"></i>
-                Save
-              </span>
-            </Cards>
-          </div>
+          {getCourses.map((course) => (
+            <div>
+              <h4>Top {course.Title} tutorials</h4>
+              <Cards
+                title={course.Course}
+                name="Adunola Odetola"
+                href={course['Course Link']}
+                link="udemy.com"
+                img={udemy}
+                cost={course['Course Cost']}
+                type={course['Student Type']}
+              >
+                <span>
+                  <i class="fas fa-bookmark"></i>
+                  SavedT
+                </span>
+              </Cards>
+            </div>
+          ))}
         </Col>
       </Row>
     </CourseSection>

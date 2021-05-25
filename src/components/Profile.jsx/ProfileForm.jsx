@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import useStyles from '../auth/style'
 import ClipLoader from 'react-spinners/ClipLoader'
 import clsx from 'clsx'
+import { instance } from '../../redux/api/config'
 import {
   TextField,
 } from '@material-ui/core'
@@ -18,8 +19,14 @@ function ProfileForm() {
     const handleChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value })
     }
-    const onSubmit = (e) => {
+    const onSubmit =async (e) => {
       e.preventDefault()
+      const profilePic = localStorage.getItem('profile-url')
+      const res = await instance.post('/update', {
+        ...values,
+        profilePic: `http://localhost:5000/${profilePic}`,
+      })
+      console.log(res.data)
     }
     return (
       <div>
@@ -30,7 +37,7 @@ function ProfileForm() {
           name="firstname"
           multiline
           rowsMax={4}
-          value={values.email}
+          value={values.firstname}
           onChange={handleChange}
           variant="outlined"
         />
@@ -41,7 +48,7 @@ function ProfileForm() {
           name="lastname"
           multiline
           rowsMax={4}
-          value={values.email}
+          value={values.lastname}
           onChange={handleChange}
           variant="outlined"
         />

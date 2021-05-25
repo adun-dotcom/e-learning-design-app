@@ -11,7 +11,7 @@ import clsx from 'clsx'
 import SimpleMenu from './Profile'
 import Profile from './Profile'
 import DropdownPg from './ExploreDropdown'
-
+// import {HiMenu} from 'react-icons'
 
 function MyNav({active}) {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
@@ -36,6 +36,7 @@ function MyNav({active}) {
   
   return (
     <Navbar bg="dark" expand="lg" className="border navbar-header">
+      
       <Navbar.Brand href="/" component={Link} to="/">
         <img src={AppLogo} alt="" />
       </Navbar.Brand>
@@ -54,7 +55,7 @@ function MyNav({active}) {
           >
             Learn more
           </Nav.Link>
-          <Form inline className="form ml-5">
+          <Form inline className="form ">
             <span>
               <i class="fas fa-search"></i>
             </span>

@@ -26,7 +26,8 @@ export const BuildSection = styled.section`
     bottom: -10%;
     left: 50%;
     transform: translateX(-50%);
-    width: 818px;
+    max-width: 818px;
+    width: 100%;
     height: 283px;
     background: #4abbcd;
     z-index: 2;
@@ -65,6 +66,29 @@ export const BuildSection = styled.section`
     left: 0;
     bottom: -25%;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    height: 100%;
+  }
+
+  .skill-text {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 200px;
+  }
+
+  .absolute-under {
+    width: 618px;
+
+    height: 283px;
+  }
+
+  .absolute-over {
+    margin: 30px auto;
+    width: 521px;
+    height: 253px;
+  }
 `
 
 export const Preview = styled.section`
@@ -78,8 +102,19 @@ export const Preview = styled.section`
     top: 25%;
     transform: translateY(-50%);
   }
-  .col {
-    position: relative;
+
+  .col{
+    margin-bottom:30px;
+  }
+
+  .myrow{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+  }
+
+  .mycol {
+    margin-bottom: 50px;
   }
 
   img {
@@ -106,6 +141,20 @@ export const Preview = styled.section`
     font-size: 30px;
     font-weight: 500;
     color: #212429;
+  }
+
+  @media (max-width:768px){
+    .myrow{
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      flex-direction: row;
+      overflow-x:scroll;
+      margin-top: 100px;
+    }
+
+    img{
+      margin-right:30px;
+    }
   }
 `
 
@@ -142,6 +191,32 @@ export const BrowseSection = styled.section`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.23s;
   }
+
+  @media (max-width: 1026px) {
+    .browse-images {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-left: 0px;
+    }
+
+    .browse-img-div {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-left: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .browse-images {
+      margin-top: 30px;
+    }
+
+    .browse-img-div {
+      margin-left: 10px;
+    }
+  }
 `
 
 export const NewsSection = styled.section`
@@ -166,6 +241,28 @@ export const NewsSection = styled.section`
     height: 52px;
     margin: 40px auto;
     outline: none;
+    padding-left:15px ;
+  }
+
+  .news-hidden {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .news-hidden {
+      display: block;
+    }
+
+    .news-active {
+      display: none;
+    }
+
+    .container input {
+      width: 250px;
+      height: 52px;
+      margin: 40px auto;
+      outline: none;
+    }
   }
 `
 
@@ -193,7 +290,7 @@ export const FooterSection = styled.footer`
 
   a:hover {
     color: #fe5f00;
-    text-decoration:none;
+    text-decoration: none;
   }
 
   hr {
@@ -206,6 +303,43 @@ export const FooterSection = styled.footer`
     display: block;
     margin-left: 80px;
     margin-top: 30px;
+  }
+
+  @media (max-width: 1026px) {
+    nav {
+      margin-left: 40px;
+    }
+
+    small {
+      margin-left: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      width: 100%;
+      margin-left: 20px;
+      justify-content: flex-start;
+    }
+
+    small {
+      margin-left: 20px;
+    }
+
+    a {
+      font-size: 16px;
+      margin: 0 10px;
+    }
+
+    img {
+      margin-right: 50px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    img {
+      display: none;
+    }
   }
 `
 
@@ -226,12 +360,14 @@ export const LearnSection = styled.section`
   }
 
   img {
+    object-fit: cover;
     max-width: 100%;
   }
 
   .learn-people {
     margin-top: 80px;
     height: 436px;
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
   }
@@ -242,7 +378,41 @@ export const LearnSection = styled.section`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    width: 590px;
+    max-width: 590px;
+    width: 100%;
+  }
+
+  @media (max-width: 1026px) {
+    .learn-img {
+      height: 436px;
+    }
+    .learn-img img {
+      width: 100%;
+      height: 145px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .learn-people {
+      margin-top: 80px;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .learn-people img{
+      width: 500px;
+      height: auto;
+      margin-bottom: 20px;
+
+    }
+    .learn-img {
+      justify-content: center;
+      height: 100%;
+    }
+    /* .learn-img img {
+      width: 100%;
+      height: 100%;
+    } */
   }
 `
 export const TeamSection = styled.section`
@@ -251,6 +421,7 @@ export const TeamSection = styled.section`
   .team-images {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 80px;
   }
@@ -317,15 +488,16 @@ export const CardGroup = styled.div`
   background: rgba(234, 244, 247, 0.5);
   border: 1px solid #4abbcd;
   margin-top: 30px;
-  padding: 30px;
+  padding: 30px ;
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 40px;
+
 
   .card-img {
     width: 278px;
     border-radius: 6px;
+    margin-right:40px;
   }
 
   img {
@@ -335,7 +507,7 @@ export const CardGroup = styled.div`
 
   .card-subdiv {
     height: 150px;
-    width: 261px;
+    width: 100%;
     font-size: 20px;
     padding: 0;
     text-align: left;
@@ -395,30 +567,22 @@ export const CardGroup = styled.div`
   }
 `
 
-// export const RecommendSection = styled.section`
-// p{
-
-// }
-
-// `
-
 export const ProfileSection = styled.section`
-  padding:70px 200px;
- .profile-flex{
-   margin-bottom:80px;
-   /* width:80%; */
-   max-width:100%;
-   display:flex;
-   justify-content:space-between;
-   align-items:flex-end
- }
+  padding: 70px 200px;
+  .profile-flex {
+    margin-bottom: 80px;
+    /* width:80%; */
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
   .profile-user {
     padding: 40px 10px;
     height: 430px;
     width: 290px;
     border-radius: 6px;
     background: #eaf4f7;
-    
   }
 
   .person-card {
@@ -426,6 +590,7 @@ export const ProfileSection = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .avatar {
@@ -448,11 +613,23 @@ export const ProfileSection = styled.section`
     margin-top: -20px;
   }
 
-  .profile-form{
-    width:609px;
+  .profile-form {
+    width: 609px;
   }
 
-  .saved-courses{
+  .profile-pic{
+     background: rgba(172, 181, 189, 1);
+     width:30px;
+     height:30px;
+     border-radius:50%; 
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     position: absolute;
+     top: 140px;
+     right: 50px;
 
+  }
+  .saved-courses {
   }
 `

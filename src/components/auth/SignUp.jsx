@@ -33,7 +33,7 @@ export default function SignupPg() {
     password: true,
     firstName: false,
     lastName: false,
-    password: false,
+    // password: false,
   })
   const [values, setValues] = React.useState({
     email: '',
@@ -91,7 +91,7 @@ export default function SignupPg() {
         <TextField
           id="outlined-multiline-flexible"
           error={false}
-          helperText={errors.firstName ? 'inavlid name' : ''}
+          // helperText={errors.firstName ? 'inavlid name' : ''}
           className={classes.textField}
           label="First Name"
           multiline
@@ -119,7 +119,7 @@ export default function SignupPg() {
           label="Email Address"
           multiline
           name="email"
-          helperText={errors.email ? 'inavlid email' : ''}
+          // helperText={errors.email ? 'inavlid email' : ''}
           rowsMax={4}
           value={values.email}
           onChange={handleChange}
@@ -140,7 +140,7 @@ export default function SignupPg() {
             value={values.password}
             name="password"
             onChange={handleChange}
-            helperText={errors.password ? 'password too short' : ''}
+            // helperText={errors.password ? 'password too short' : ''}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -167,8 +167,13 @@ export default function SignupPg() {
           <hr className={classes.hr} />
         </div>
         <GoogleAuth />
+        <span className={clsx('d-block text-center', classes.signupSpan)}>
+          Already have an account?{' '}
+          <a className={classes.link} href="/login">
+            login
+          </a>
+        </span>
       </div>
-     
     </form>
   )
 }

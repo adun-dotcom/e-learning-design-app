@@ -22,7 +22,7 @@ nav .nav-brand img {
   text-decoration: none;
 }
 .nav-input {
-  min-width: 400px;
+  max-width: 400px;
   height: 36px;
   padding: 10px 60px;
   outline: none !important;
@@ -40,6 +40,7 @@ nav .nav-brand img {
 
 .form {
   position: relative;
+  margin-left: 50px;
 }
 
 .form span {
@@ -208,3 +209,33 @@ nav .nav-brand img {
     gap: 30px;
 }
 
+@media (max-width:1026px){
+  .navbar-header {
+  min-height: 70px;
+  padding: 20px 40px;
+  width: 100%;
+  
+}
+
+.nav-title {
+
+  font-size: 18px;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.form {
+  position: relative;
+  margin-left: 20px;
+ 
+}
+}
+
+@media (max-width:768px){
+   .navbar-header {
+  min-height: 70px;
+  padding: 20px 20px;
+  width: 100%;
+  
+}
+}

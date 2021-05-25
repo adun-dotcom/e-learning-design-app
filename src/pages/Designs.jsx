@@ -12,41 +12,39 @@ import { Link } from 'react-router-dom'
 function CoursePreview() {
   return (
     <div className="design-preview">
-      <Preview className="wrapper preview mb-5">
-        <Row className="mb-5">
-          <Col sm className="col">
-            <Link to="/explorepg">
+      <Preview className="wrapper  mb-5">
+        <div className="myrow">
+          <div  className="mycol">
+            <Link to="/explorepg/illustration">
               <img src={Illustrate} alt="" />
             </Link>
-          </Col>
-          <Col sm>
-            <Link to="/explorepg">
+          </div>
+          <div  className="mycol">
+            <Link to="/explorepg/ui">
               <img src={Ui} alt="" />
             </Link>
-          </Col>
-          <Col sm>
-            <Link to="/explorepg">
+          </div>
+          <div  className="mycol">
+            <Link to="/explorepg/graphics">
               <img src={Graphics} alt="" />
             </Link>
-          </Col>
-        </Row>
-        <Row className="pt-2">
-          <Col sm>
-            <Link to="/explorepg">
+          </div>
+          <div  className="mycol">
+            <Link to="/explorepg/typo">
               <img src={Typo} alt="" />
             </Link>
-          </Col>
-          <Col sm>
-            <Link to="/explorepg">
+          </div>
+          <div  className="mycol">
+            <Link to="/explorepg/figma">
               <img src={Figma} alt="" />
             </Link>
-          </Col>
-          <Col sm>
-            <Link to="/explorepg">
+          </div>
+          <div  className="mycol">
+            <Link to="/explorepg/ux">
               <img src={Ux} alt="" />
             </Link>
-          </Col>
-        </Row>
+          </div>
+        </div>
         <div className="btn-div text-center mt-5">
           <MyButton
             path="/viewall"

@@ -1,7 +1,7 @@
 import React from 'react'
 import { CardGroup } from '../components/style'
 
-function Cards({ img, title, link, name, children }) {
+function Cards({ img, title, link, name, cost, type, href }) {
   const [icon, setIcon] = React.useState(false)
   const [save, setSave] = React.useState(false)
 
@@ -21,7 +21,7 @@ function Cards({ img, title, link, name, children }) {
         <img src={img} alt="" />
       </div>
       <div className="card-subdiv">
-        <p>Introduction to {title}</p>
+        <a href={href} target="_blank">Introduction to {title}</a>
         <a href="">{link}</a>
         <p className="disabled-text">Submitted by {name}</p>
         <div className="card-spandiv">
@@ -33,8 +33,8 @@ function Cards({ img, title, link, name, children }) {
             )}
             {save ? 'saved' : 'save'}
           </span>
-          <span className="blue-span">Paid</span>
-          <span className="blue-span advance-span">Advanced</span>
+          <span className="blue-span">{cost}</span>
+          <span className="blue-span advance-span">{type}</span>
         </div>
       </div>
     </CardGroup>

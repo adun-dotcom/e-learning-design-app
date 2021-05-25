@@ -1,17 +1,16 @@
 import axios from 'axios'
 
-const instance = axios.create({
-  baseURL: 'http://localhost:5000/users',
+export const instance = axios.create({
+  baseURL: process.env.NODE_ENV==="development" ?'http://localhost:5000/users': 'https://learn-design-0.herokuapp.com/users'
 })
 
 export const signIn = (values) => instance.post('/signin', values)
 export const signUp = (values) => instance.post('/signup', values)
+// export const courses = ()=> instance.get('/courses' )
 
-
-// const API = Axios.create({ baseURL: 'http://localhost:5000/users' })
-// API.interceptors.request.use(req=>{
+// instance.interceptors.request.use(req=>{
 //     if(localStorage.getItem('profile')){
-//         req.headers.Authorization(`Bearer ${JSON.parse(localStorage.getItem('profile')).token}`)
+//         req.headers['x-access-token'] = `${JSON.parse(localStorage.getItem('profile')).token}`
 //     }
 // })
 // export const signUp = (form) => API.post('/signup', form)
