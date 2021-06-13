@@ -22,7 +22,8 @@ export default function GoogleAuth() {
 
     try {
       dispatch({type: 'AUTH', data: {result, token}})
-      push('/')
+      window.location.assign('/')
+      // push('/')
     } catch (error) {
       console.log(error)
     }
