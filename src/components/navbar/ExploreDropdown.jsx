@@ -4,7 +4,7 @@ import { DropdownSubmenu, NavDropdownMenu } from 'react-bootstrap-submenu'
 const DropdownPg = () => {
   return (
     <div className="dropdown">
-      <a className="dropbtn">Explore</a>
+      <a className="dropbtn explore-link">Explore</a>
       <div className="dropdown-content">
         <a href="#" className="dropdown-link">
           <span className="spanned-link">

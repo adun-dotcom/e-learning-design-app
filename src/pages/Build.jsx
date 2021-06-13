@@ -10,7 +10,7 @@ function BuildSkill(){
         <div className="skill-text">
           <h1>Build your skill in Design</h1>
           <p>Your one stop site to the best design courses and resources.</p>
-          <MyButton text="Learn more" clsName="button border-0 btn btn-lg" />
+          <MyButton path="/learnpg" text="Learn more" clsName="button border-0 btn btn-lg" />
         </div>
         <div className="skill-image">
           <img src={SkillGirl} alt="" />

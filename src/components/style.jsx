@@ -67,11 +67,25 @@ export const BuildSection = styled.section`
     bottom: -25%;
   }
 
+  @media screen and (max-width: 1082px) {
+    .skill-image img {
+      width: 400px;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .skill-image img {
+      width: 340px;
+    }
+  }
   @media (max-width: 768px) {
     flex-direction: column-reverse;
     height: 100%;
   }
 
+  .skill-image img {
+    width: 100%;
+  }
   .skill-text {
     width: 100%;
     height: 100%;
@@ -103,14 +117,14 @@ export const Preview = styled.section`
     transform: translateY(-50%);
   }
 
-  .col{
-    margin-bottom:30px;
+  .col {
+    margin-bottom: 30px;
   }
 
-  .myrow{
+  .myrow {
     display: flex;
     justify-content: space-around;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
   }
 
   .mycol {
@@ -143,17 +157,17 @@ export const Preview = styled.section`
     color: #212429;
   }
 
-  @media (max-width:768px){
-    .myrow{
+  @media (max-width: 768px) {
+    .myrow {
       flex-wrap: nowrap;
       justify-content: flex-start;
       flex-direction: row;
-      overflow-x:scroll;
+      overflow-x: scroll;
       margin-top: 100px;
     }
 
-    img{
-      margin-right:30px;
+    img {
+      margin-right: 30px;
     }
   }
 `
@@ -241,7 +255,7 @@ export const NewsSection = styled.section`
     height: 52px;
     margin: 40px auto;
     outline: none;
-    padding-left:15px ;
+    padding-left: 15px;
   }
 
   .news-hidden {
@@ -270,16 +284,10 @@ export const FooterSection = styled.footer`
   margin-top: 80px;
   margin-bottom: 50px;
 
-  nav {
+  div {
     display: flex;
     justify-content: space-between;
-    width: 75%;
-    margin-left: 80px;
-    margin-bottom: 30px;
-  }
-
-  img {
-    margin-right: 150px;
+    padding: 0px 80px 30px 80px;
   }
 
   a {
@@ -301,38 +309,31 @@ export const FooterSection = styled.footer`
 
   small {
     display: block;
-    margin-left: 80px;
+    padding-left: 80px;
     margin-top: 30px;
   }
 
   @media (max-width: 1026px) {
-    nav {
-      margin-left: 40px;
+    div {
+      padding: 0px 40px 30px 40px;
     }
 
     small {
-      margin-left: 40px;
+      padding-left: 40px;
     }
   }
 
   @media (max-width: 768px) {
-    nav {
+    div {
       width: 100%;
-      margin-left: 20px;
-      justify-content: flex-start;
     }
 
     small {
       margin-left: 20px;
     }
 
-    a {
-      font-size: 16px;
-      margin: 0 10px;
-    }
-
     img {
-      margin-right: 50px;
+      display: none;
     }
   }
 
@@ -399,11 +400,10 @@ export const LearnSection = styled.section`
       justify-content: center;
     }
 
-    .learn-people img{
+    .learn-people img {
       width: 500px;
       height: auto;
       margin-bottom: 20px;
-
     }
     .learn-img {
       justify-content: center;
@@ -488,16 +488,15 @@ export const CardGroup = styled.div`
   background: rgba(234, 244, 247, 0.5);
   border: 1px solid #4abbcd;
   margin-top: 30px;
-  padding: 30px ;
+  padding: 30px;
   display: flex;
   justify-content: start;
   align-items: center;
 
-
   .card-img {
     width: 278px;
     border-radius: 6px;
-    margin-right:40px;
+    margin-right: 40px;
   }
 
   img {
@@ -617,18 +616,17 @@ export const ProfileSection = styled.section`
     width: 609px;
   }
 
-  .profile-pic{
-     background: rgba(172, 181, 189, 1);
-     width:30px;
-     height:30px;
-     border-radius:50%; 
-     display:flex;
-     justify-content: center;
-     align-items: center;
-     position: absolute;
-     top: 140px;
-     right: 50px;
-
+  .profile-pic {
+    background: rgba(172, 181, 189, 1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 140px;
+    right: 50px;
   }
   .saved-courses {
   }

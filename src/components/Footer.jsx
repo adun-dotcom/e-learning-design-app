@@ -5,15 +5,25 @@ import { FooterSection } from './style'
 function MyFooter(){
     return (
       <FooterSection>
-           <nav >
+        <div>
+          <a href="/">
             <img src={AppLogo} alt="" />
-            <Link to="#">Learn more</Link>
-            <Link to="#">Sitemap</Link>
-            <Link to="#">Help & FAQ</Link>
-            <Link to="#">Feedback</Link>
-          </nav>
+          </a>
+          <Link to="#" className="footer-list">
+            Learn more
+          </Link>
+          <Link to="#" className="footer-list">
+            Sitemap
+          </Link>
+          <Link to="#" className="footer-list">
+            Help & FAQ
+          </Link>
+          <Link to="#" className="footer-list">
+            Feedback
+          </Link>
+        </div>
         <hr />
-        <small >Copyright © 2021 LearnDesign. All rights reserved.</small>
+        <small>Copyright © 2021 LearnDesign. All rights reserved.</small>
       </FooterSection>
     )
 }

@@ -28,5 +28,20 @@
   opacity: .8;
 }
 
+@media screen and (max-width:1082px) {
+    .button{
+    background: #FE5F00 !important;
+    color: #FFFFFF !important;
+    transition: 0.25s;
+    outline: none;
+}
 
+.button-white{
+    background: #EAF4F7 !important;
+    color: #FE5F00 !important;
+  width: fit-content;
+  margin-bottom: 30px;
+  
+}
+}
 

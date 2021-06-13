@@ -62,9 +62,9 @@ function CoursePg() {
           </div>
         </Col>
         <Col className="tutorials" xs={12} md={8}>
+          <h4>Top tutorial courses</h4>
           {getCourses.map((course) => (
             <div>
-              <h4>Top {course.Title} tutorials</h4>
               <Cards
                 title={course.Course}
                 name="Adunola Odetola"
@@ -76,7 +76,7 @@ function CoursePg() {
               >
                 <span>
                   <i class="fas fa-bookmark"></i>
-                  SavedT
+                  Saved
                 </span>
               </Cards>
             </div>
