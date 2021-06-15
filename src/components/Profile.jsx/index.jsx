@@ -12,20 +12,7 @@ function ProfilePg() {
         <MyNav />
         <ProfileSection className="wrapper">
           <InfoPg />
-          <div className="saved-courses">
-            <h3>Saved courses</h3>
-            <Cards
-              title="Illustration"
-              name="Adunola Odetola"
-              link="udemy.com"
-              img={udemy}
-            >
-              <span>
-                <i class="fas fa-bookmark"></i>
-                Saved
-              </span>
-            </Cards>
-          </div>
+          
         </ProfileSection>
 
         <MyFooter />

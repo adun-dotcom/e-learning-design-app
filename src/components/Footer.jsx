@@ -6,7 +6,7 @@ function MyFooter(){
     return (
       <FooterSection>
         <div>
-          <a href="/">
+          <a href="/" className="footer-logo">
             <img src={AppLogo} alt="" />
           </a>
           <Link to="#" className="footer-list">

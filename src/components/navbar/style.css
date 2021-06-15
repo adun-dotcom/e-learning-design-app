@@ -246,7 +246,7 @@ nav .nav-brand img {
   gap: 30px;
 }
 
-@media (max-width: 1161px) {
+@media (max-width: 1300px) {
   .navbar-header {
     min-height: 70px;
     padding: 20px 40px;
@@ -265,7 +265,7 @@ nav .nav-brand img {
   .form {
     position: relative;
     margin-left: 30px;
-    width: 300px;
+    width: 350px;
   }
 
   .btn-lg,
@@ -276,7 +276,7 @@ nav .nav-brand img {
   }
 }
 
-@media screen and (max-width: 1082px) {
+@media screen and (max-width: 1172px) {
   .mobile-menu {
     display: flex;
     justify-content: space-between;
@@ -315,7 +315,7 @@ nav .nav-brand img {
     top: 70px;
     left: 0;
     height: 350px;
-    width: 225px;
+    width: 300px;
     background-color: #fff;
     z-index: 100;
     padding: 40px 0px;

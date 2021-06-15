@@ -12,7 +12,7 @@ function BuildSkill(){
           <p>Your one stop site to the best design courses and resources.</p>
           <MyButton path="/learnpg" text="Learn more" clsName="button border-0 btn btn-lg" />
         </div>
-        <div className="skill-image">
+        <div className="skill-img">
           <img src={SkillGirl} alt="" />
         </div>
 

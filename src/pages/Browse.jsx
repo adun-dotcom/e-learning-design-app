@@ -1,16 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import ImageGirl from '../assets/image-girl.png'
 import Icons from '../assets/icons.png'
 import Graph from '../assets/graph.png'
 import { BrowseSection } from '../components/style'
 import { Row, Col } from 'react-bootstrap'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 function BrowseSkill() {
+      useEffect(() => {
+        Aos.init({ duration: 2000 })
+      }, [])
   return (
     <BrowseSection className="wrapper mb-5">
       <Row className="d-flex align-items-center browse-row">
         <Col>
           <div className="browse-text">
-            <h2>Browse amazing resources for your projects</h2>
+            <h2 data-aos="fade-right">
+              Browse amazing resources for your projects
+            </h2>
             <p>Get amazing premium or courses for your design projects.</p>
           </div>
         </Col>

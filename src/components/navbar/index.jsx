@@ -135,7 +135,7 @@ function MyNav({ active, clsBar }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto align-items-center ">
             <Nav.Link
-              href="/learnpg"
+              
               className={clsx(
                 'nav-title web-view',
                 active === '/explore' ? 'active' : ''

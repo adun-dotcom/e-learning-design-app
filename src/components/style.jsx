@@ -67,41 +67,37 @@ export const BuildSection = styled.section`
     bottom: -25%;
   }
 
-  @media screen and (max-width: 1082px) {
-    .skill-image img {
+  @media screen and (max-width: 1012px) {
+    .skill-img img {
       width: 400px;
     }
   }
 
   @media screen and (max-width: 850px) {
-    .skill-image img {
-      width: 340px;
-    }
-  }
-  @media (max-width: 768px) {
     flex-direction: column-reverse;
     height: 100%;
+
+    .skill-img img {
+      width: 100%;
+    }
+    .skill-text {
+      width: 100%;
+      height: 400px;
+      
+    }
   }
 
-  .skill-image img {
-    width: 100%;
-  }
-  .skill-text {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 200px;
-  }
+  @media screen and (max-width: 768px) {
+    .absolute-under {
+      width: 618px;
+      height: 283px;
+    }
 
-  .absolute-under {
-    width: 618px;
-
-    height: 283px;
-  }
-
-  .absolute-over {
-    margin: 30px auto;
-    width: 521px;
-    height: 253px;
+    .absolute-over {
+      margin: 30px auto;
+      width: 521px;
+      height: 253px;
+    }
   }
 `
 
@@ -134,6 +130,7 @@ export const Preview = styled.section`
   img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.23s;
+    border-radius: 10px;
   }
 
   img:hover {
@@ -157,7 +154,34 @@ export const Preview = styled.section`
     color: #212429;
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 1300px) {
+    .myrow {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    img {
+      object-fit: cover;
+      height: 250px;
+      width: 320px;
+    }
+  }
+
+  @media screen and (max-width: 1184px) {
+    img {
+     
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 1122px) {
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 889px) {
     .myrow {
       flex-wrap: nowrap;
       justify-content: flex-start;
@@ -167,6 +191,8 @@ export const Preview = styled.section`
     }
 
     img {
+      height: 280px;
+      width: 340px;
       margin-right: 30px;
     }
   }
@@ -326,21 +352,22 @@ export const FooterSection = styled.footer`
   @media (max-width: 768px) {
     div {
       width: 100%;
+      padding: 0px 20px 20px 20px;
     }
 
     small {
-      margin-left: 20px;
+      padding-left: 20px;
     }
 
-    img {
+    .footer-logo {
       display: none;
     }
   }
 
   @media (max-width: 550px) {
-    img {
-      display: none;
-    }
+   .footer-list{
+     font-size: 14px;
+   }
   }
 `
 
@@ -348,6 +375,10 @@ export const LearnSection = styled.section`
   background: white;
   .container {
     width: 704px;
+  }
+
+  .learn-img.hidden {
+    display: none;
   }
 
   h1 {
@@ -368,7 +399,6 @@ export const LearnSection = styled.section`
   .learn-people {
     margin-top: 80px;
     height: 436px;
-    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
   }
@@ -383,36 +413,141 @@ export const LearnSection = styled.section`
     width: 100%;
   }
 
-  @media (max-width: 1026px) {
+  @media (max-width: 1300px) {
     .learn-img {
-      height: 436px;
+      height: 420px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .learn-img img {
+      width: 220px;
+    }
+
+    .learn-img img:nth-child(1) {
+      width: 100%;
+    }
+    .stand-alone {
+      width: 250px;
+    }
+  }
+
+  @media (max-width: 1170px) {
+    .stand-alone {
+      width: 220px;
+    }
+    .learn-img {
+      height: 420px;
+      max-width: 450px;
+      width: 100%;
+    }
+
+    .learn-img img {
+      width: 200px;
+    }
+  }
+
+  @media (max-width: 1026px) {
+    .learn-img.hidden {
+      display: flex;
+      margin: 50px auto;
+      height: 420px;
+      max-width: 670px;
+      width: 100%;
+    }
+    .learn-img {
+      display: none;
     }
     .learn-img img {
+      width: 300px;
+      height: 200px;
+      margin-top: 20px;
+    }
+    .stand-alone {
+      width: 350px;
+    }
+  }
+
+  @media (max-width: 851px) {
+    .stand-alone {
+      width: 300px;
+    }
+
+    .container {
       width: 100%;
-      height: 145px;
     }
   }
 
   @media (max-width: 768px) {
+    .container {
+      width: 100%;
+    }
+    .stand-alone {
+      /* width: 250px; */
+    }
     .learn-people {
       margin-top: 80px;
       height: 100%;
-      justify-content: center;
+    }
+    .learn-img img {
+      /* width: 250px; */
+      height: 200px;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 633px) {
+    .container {
+      width: 100%;
+    }
+    .stand-alone {
+      width: 250px;
+    }
+    .learn-people {
+      margin-top: 80px;
+      height: 100%;
+    }
+    .learn-img img {
+      width: 250px;
+      height: 200px;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .learn-people {
+      flex-direction: column;
+      align-items: center;
     }
 
-    .learn-people img {
-      width: 500px;
-      height: auto;
-      margin-bottom: 20px;
+    .learn-people .stand-alone {
+      width: 70%;
+      margin-top: 50px;
     }
-    .learn-img {
-      justify-content: center;
-      height: 100%;
+
+    .learn-people .stand-alone:nth-child(1) {
+      margin-top: 0;
     }
-    /* .learn-img img {
+    .learn-img.hidden {
+      margin-bottom: 30px;
+      height: 600px;
+      width: 400px;
+    }
+    .learn-img.hidden img {
       width: 100%;
-      height: 100%;
-    } */
+    }
+  }
+
+  @media (max-width: 450px) {
+    .learn-img.hidden {
+      margin-bottom: 30px;
+      height: 600px;
+      width: 100%;
+    }
   }
 `
 export const TeamSection = styled.section`
@@ -435,18 +570,42 @@ export const TeamSection = styled.section`
   p {
     font-size: 24px;
   }
+
+  @media (max-width: 1270px) {
+    h4 {
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .team-images {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .team-images > div{
+      margin-bottom: 20px;
+    }
+  }
 `
 
 export const CourseSection = styled.section`
   margin-top: -70px;
   .course-img {
-    height: 242.06790161132812px;
+    height: 300px;
     width: 100%;
   }
 
   img {
     object-fit: cover;
-    height: 100%;
+    width: inherit;
+    height: inherit;
     border-radius: 6px;
   }
 
@@ -477,7 +636,47 @@ export const CourseSection = styled.section`
     width: 100%;
   }
 
-  .tutorials {
+  .tutorials a {
+    text-decoration: none;
+    color: black !important;
+  }
+  .tutorial-flex {
+    display: flex;
+  }
+
+  .tutorial-flex h4 {
+    margin-left: 10px;
+  }
+
+  @media (max-width: 1100px) {
+    .search-filter {
+      padding: 30px 0;
+      margin-right: 30px;
+    }
+  }
+
+  @media (max-width: 940px) {
+    .search-filter {
+      padding: 20px 0;
+      margin-right: 15px;
+    }
+
+    .tutorials {
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 770px) {
+    .course-img {
+      height: 200px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .search-filter {
+      width: 100%;
+    }
   }
 `
 
@@ -564,6 +763,82 @@ export const CardGroup = styled.div`
   .fa-bookmark {
     padding-right: 10px;
   }
+
+  @media (max-width: 1300px) {
+    width: 700px;
+  }
+
+  @media (max-width: 1100px) {
+    width: 600px;
+    padding: 15px;
+
+    .card-img {
+      width: 278px;
+      border-radius: 6px;
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: 980px) {
+    width: 100%;
+    padding: 20px;
+
+    .card-img {
+      width: 240px;
+      border-radius: 6px;
+      margin-right: 30px;
+    }
+    a {
+      color: #495057;
+      text-decoration: underline;
+      font-size: 16px;
+      margin-top: 0px;
+    }
+  }
+
+  @media (max-width: 630px) {
+    .card-img {
+      width: 200px;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .card-subdiv {
+      height: fit-content;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    a {
+      color: #495057;
+      text-decoration: underline;
+      font-size: 16px;
+      margin-top: 0px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+
+    .card-img {
+      width: 150px;
+      border-radius: 6px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
+
+    .card-subdiv {
+      height: 100%;
+      width: 90%;
+      margin: 10px auto;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
 `
 
 export const ProfileSection = styled.section`
@@ -628,6 +903,83 @@ export const ProfileSection = styled.section`
     top: 140px;
     right: 50px;
   }
-  .saved-courses {
+
+  @media (max-width: 1300px) {
+    padding: 70px 100px;
+  }
+
+  @media (max-width: 1139px) {
+    padding: 70px 50px;
+
+    .profile-form {
+      width: 509px;
+    }
+  }
+
+  @media (max-width: 926px) {
+    .profile-user {
+      height: 430px;
+      width: 250px;
+    }
+    .avatar {
+      height: 150px;
+      width: 150px;
+      object-fit: contain;
+    }
+
+    .profile-form {
+      width: 450px;
+    }
+
+    .profile-pic {
+      top: 110px;
+    }
+  }
+
+  @media (max-width: 790px) {
+    .profile-user {
+      height: 430px;
+      width: 200px;
+    }
+
+    .profile-form {
+      width: 400px;
+    }
+
+    .user-name {
+      font-size: 20px;
+      padding-top: 20px;
+    }
+
+    .user-email {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 717px) {
+    .profile-flex {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .profile-user {
+      height: 430px;
+      width: 70%;
+    }
+
+    .profile-form {
+      width: 100%;
+    }
+    .user-name {
+      font-size: 20px;
+    }
+
+    .user-email {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    padding: 70px 20px;
   }
 `

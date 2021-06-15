@@ -8,6 +8,7 @@ import NewsLetter from '../../pages/News'
 import {useDispatch, useSelector} from 'react-redux'
 import {useLocation} from 'react-router-dom'
 import {alertHide, alertShow} from '../../redux/alertBar/alertAction'
+import FadeInAnimation from '../Animation'
 
 function LandingPg() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')))
@@ -26,8 +27,10 @@ else {
 }, [location])
   return (
     <div>
-      <MyNav/>
-      <BuildSkill />
+      <FadeInAnimation direction="down" delay={1}>
+        <MyNav />
+        <BuildSkill />
+      </FadeInAnimation>
       <CoursePreview />
       <BrowseSkill />
       <NewsLetter />

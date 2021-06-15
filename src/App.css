@@ -7,6 +7,10 @@
   margin-top: 200px;
 }
 
+.courseImg img{
+  width: 100%;
+}
+
 @media (max-width:1024px){
   .wrapper {
   padding:80px 60px;
@@ -14,3 +18,8 @@
 }
 }
 
+@media (max-width:768px){
+  .wrapper{
+     padding:80px 20px;
+  }
+}

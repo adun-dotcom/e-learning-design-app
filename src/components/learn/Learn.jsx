@@ -17,14 +17,19 @@ function LearnMore() {
         </p>
       </div>
       <div className="learn-people">
-        <img src={Human1} alt="" />
+        <img src={Human1} className="stand-alone" alt="" />
         <div className="learn-img">
           <img src={Human2} alt="" />
           <img src={Human3} alt="" />
           <img src={Human4} alt="" />
         </div>
 
-        <img src={Human5} alt="" />
+        <img className="stand-alone" src={Human5} alt="" />
+      </div>
+      <div className="learn-img hidden">
+        <img src={Human2} alt="" />
+        <img src={Human3} alt="" />
+        <img src={Human4} alt="" />
       </div>
     </LearnSection>
   )

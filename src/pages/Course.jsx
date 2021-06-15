@@ -8,12 +8,15 @@ import udemy from '../assets/udemy.png'
 import cousera from '../assets/cousera.png'
 import greenBx from '../assets/green-bx.png'
 import { instance } from '../redux/api/config'
+import CourseImage from './CourseImage'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 function CoursePg() {
   // console.log(window.location.pathname)
   const pathArray = window.location.pathname.split('/')
   const pathName = pathArray[pathArray.length - 1]
-  console.log(pathName)
   // console.log(pathName)
+  
   const [getCourses, setGetCourses] = useState([])
   const getData = async () => {
     try {
@@ -36,15 +39,17 @@ function CoursePg() {
   useEffect(() => {
     getData()
   }, [])
+    useEffect(() => {
+      Aos.init({ duration: 2000 })
+    }, [])
   return (
     <CourseSection className="wrapper">
-      <Card className="course-img">
-        <Card.Img variant="top" src={Illustrate} />
-      </Card>
-      {/* course filter section */}
+      <div className="course-img">
+        <CourseImage />
+      </div>
 
       <Row className="course-wrap ">
-        <Col className="search-filter" xs={6} md={3}>
+        <Col className="search-filter" xs={6} lg={3}>
           <div>
             <p>Search filter</p>
             <hr />
@@ -62,9 +67,13 @@ function CoursePg() {
           </div>
         </Col>
         <Col className="tutorials" xs={12} md={8}>
-          <h4>Top tutorial courses</h4>
+          <div className="tutorial-flex">
+            <a href="/viewall">&#8592;</a>
+            <h4>Top tutorial courses</h4>
+          </div>
+
           {getCourses.map((course) => (
-            <div>
+            <div data-aos="fade-up">
               <Cards
                 title={course.Course}
                 name="Adunola Odetola"

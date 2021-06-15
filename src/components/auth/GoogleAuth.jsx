@@ -23,8 +23,9 @@ export default function GoogleAuth() {
     try {
       dispatch({type: 'AUTH', data: {result, token}})
       push('/')
+
     } catch (error) {
-      console.log(error)
+      console.log(error, "errot")
     }
   }
 

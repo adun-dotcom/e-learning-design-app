@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Dropdown, FormControl, NavDropdown } from 'react-bootstrap'
-import { DropdownSubmenu, NavDropdownMenu } from 'react-bootstrap-submenu'
+import {Link} from 'react-router-dom'
+
 const DropdownPg = () => {
   return (
     <div className="dropdown">
@@ -13,11 +13,21 @@ const DropdownPg = () => {
           </span>
 
           <ul className="dropdown-subcontent">
-            <li>Adobe XD</li>
-            <li>Figma</li>
-            <li>User Experience Design</li>
-            <li>Photoshop</li>
-            <li>User Research</li>
+            <li>
+              <Link to="/explorepg/adobe-xd">Adobe XD</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/figma">Figma</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/design">User Experience Design</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/adobe-xd">Photoshop</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/research">User Research</Link>
+            </li>
           </ul>
         </a>
         <a href="#" className="dropdown-link">
@@ -39,11 +49,21 @@ const DropdownPg = () => {
           </span>
 
           <ul className="dropdown-subcontent">
-            <li>Photoshop</li>
-            <li>Figma</li>
-            <li>Illustrator</li>
-            <li>Adobe XD</li>
-            <li>Indesign</li>
+            <li>
+              <Link to="/explorepg/adobe-xd">Photoshop</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/figma">Figma</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/illustration">Illustrator</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/adobe-xd">Adobe XD</Link>
+            </li>
+            <li>
+              <Link to="/explorepg/design">Indesign</Link>
+            </li>
           </ul>
         </a>
         <a href="#" className="dropdown-link">
