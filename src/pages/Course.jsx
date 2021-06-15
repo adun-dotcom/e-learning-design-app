@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Row, Col } from 'react-bootstrap'
-import Illustrate from '../assets/illustrate.svg'
+import { Row, Col } from 'react-bootstrap'
 import { CourseSection } from '../components/style'
 import StyledCheckbox from '../components/Checkbox'
 import Cards from './CourseCard'
-import udemy from '../assets/udemy.png'
-import cousera from '../assets/cousera.png'
-import greenBx from '../assets/green-bx.png'
 import { instance } from '../redux/api/config'
 import CourseImage from './CourseImage'
+
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import ReactPaginate from 'react-paginate'
 function CoursePg() {
   // console.log(window.location.pathname)
   const pathArray = window.location.pathname.split('/')
@@ -18,6 +16,37 @@ function CoursePg() {
   // console.log(pathName)
   
   const [getCourses, setGetCourses] = useState([])
+  const [pageNumber, setPageNumber] = useState(0)
+
+
+  const coursePerPage = 4
+  const pageVisited = pageNumber * coursePerPage
+
+  const displayCourses = getCourses.slice(pageVisited, pageVisited + coursePerPage)
+                                  .map(course=>{
+    return (
+      <div data-aos="fade-up">
+        <Cards
+          title={course.Course}
+          name={course['Author ']}
+          href={course['Course Link']}
+          cost={course['Course Cost']}
+          type={course['Student Type']}
+        >
+          
+          <span>
+            <i class="fas fa-bookmark"></i>
+            Saved
+          </span>
+        </Cards>
+      </div>
+    )
+
+  })
+  const pageCount = Math.ceil(getCourses.length / coursePerPage)
+  const pageChange = ({selected})=>{
+    setPageNumber(selected)
+  }
   const getData = async () => {
     try {
       const result = await instance.get('/courses', {
@@ -30,7 +59,7 @@ function CoursePg() {
         return type.Category === pathName
       })
       setGetCourses(category)
-      // console.log(category, 'category')
+      
     } catch (error) {
       console.log(error)
     }
@@ -72,24 +101,19 @@ function CoursePg() {
             <h4>Top tutorial courses</h4>
           </div>
 
-          {getCourses.map((course) => (
-            <div data-aos="fade-up">
-              <Cards
-                title={course.Course}
-                name="Adunola Odetola"
-                href={course['Course Link']}
-                link="udemy.com"
-                img={udemy}
-                cost={course['Course Cost']}
-                type={course['Student Type']}
-              >
-                <span>
-                  <i class="fas fa-bookmark"></i>
-                  Saved
-                </span>
-              </Cards>
-            </div>
-          ))}
+          {displayCourses}
+          
+            <ReactPaginate
+              pageCount={pageCount}
+              onPageChange={pageChange}
+              previousLabel="&#8249;"
+              nextLabel="&#8250;"
+              containerClassName={'pagination'}
+              previousLinkClassName={'previousbtn'}
+              nextLinkClassName={'nextbtn'}
+              activeClassName={'activebtn'}
+            />
+         
         </Col>
       </Row>
     </CourseSection>

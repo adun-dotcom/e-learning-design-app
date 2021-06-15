@@ -1,7 +1,8 @@
 import React from 'react'
 import { CardGroup } from '../components/style'
+import CourseImage from './CourseImage'
 
-function Cards({ img, title, link, name, cost, type, href }) {
+function Cards({  title, link, name, cost, type, href }) {
   const [icon, setIcon] = React.useState(false)
   const [save, setSave] = React.useState(false)
 
@@ -18,11 +19,12 @@ function Cards({ img, title, link, name, cost, type, href }) {
   return (
     <CardGroup>
       <div className="card-img">
-        <img src={img} alt="" />
+     <CourseImage/>
       </div>
       <div className="card-subdiv">
-        <a href={href} target="_blank">Introduction to {title}</a>
-        <a href="">{link}</a>
+        <a href={href} target="_blank">
+          Introduction to {title}
+        </a>
         <p className="disabled-text">Submitted by {name}</p>
         <div className="card-spandiv">
           <span className="saved-span" onClick={changeIcon}>

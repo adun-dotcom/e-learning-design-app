@@ -635,6 +635,9 @@ export const CourseSection = styled.section`
   hr {
     width: 100%;
   }
+.tutorials{
+  position: relative;
+}
 
   .tutorials a {
     text-decoration: none;
@@ -647,7 +650,59 @@ export const CourseSection = styled.section`
   .tutorial-flex h4 {
     margin-left: 10px;
   }
+  /* .react-pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+  } */
+  .pagination {
+    position: absolute;
+   bottom: -100px;
+    /* width: 816px; */
+    height: 40px;
+    list-style: none;
+    display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  right: 0;
 
+  }
+  .pagination a {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px;
+    border: 1px solid #fe5f00;
+    cursor: pointer;
+  }
+
+  .activebtn a {
+    background-color: #fe5f00;
+    color: #fff !important;
+  }
+  .pagination a:hover {
+    background-color: #fe5f00;
+    color: #fff !important;
+  }
+  .previous,
+  .next {
+    background-color: #fe5f00;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .previous a,
+  .next a {
+    color: #fff !important;
+    padding: 0;
+    font-size: 28px;
+  }
+ 
+  @media (max-width:1300px){
+    .pagination:700px;
+  }
   @media (max-width: 1100px) {
     .search-filter {
       padding: 30px 0;
