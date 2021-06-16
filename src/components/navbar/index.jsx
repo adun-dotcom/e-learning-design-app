@@ -19,7 +19,6 @@ function MyNav({ active, clsBar }) {
   const { push } = useHistory()
   const dispatch = useDispatch()
   const location = useLocation()
-  const classes = useStyles()
   const node = useRef()
   useEffect(() => {
     const token = user?.token

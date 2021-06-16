@@ -1,4 +1,4 @@
-import {AUTH, LOGOUT,} from './UserType'
+import {AUTH, LOGOUT, EDIT_USER} from './UserType'
 
 const INITIAL_STATE = {
   loggedIn: JSON.parse(localStorage.getItem('profile')) ? true : false,
@@ -12,6 +12,14 @@ const authReducer = (state =INITIAL_STATE, action)=>{
       case AUTH:
         localStorage.setItem('profile', JSON.stringify({ ...action?.data }))
         return { ...state, loggingIn:true, loggedIn:true, visiting: true, authData: action?.data }
+        // case EDIT_USER:
+        //    return {
+        //      ...state,
+        //      loggingIn: true,
+        //      loggedIn: true,
+        //      visiting: true,
+        //      authData: action?.data,
+        //    }
       case LOGOUT:
         localStorage.clear()
         return {

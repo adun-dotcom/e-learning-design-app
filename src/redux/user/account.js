@@ -24,3 +24,14 @@ export const signup = (values, history) => async (dispatch) => {
     console.log(error)
   }
 }
+
+// export const editUser = (values) => async (dispatch) => {
+//   const  result = await api.editUser(values)
+//   console.log(result, 'tokenmmm, resultttt')
+//   try {
+//     dispatch({ type: 'AUTH', data: result.data})
+//     console.log(result , 'hdsd')
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }

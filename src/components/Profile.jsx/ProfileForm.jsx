@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import useStyles from '../auth/style'
 import ClipLoader from 'react-spinners/ClipLoader'
 import clsx from 'clsx'
+import { useDispatch } from 'react-redux'
+import {  useHistory } from 'react-router-dom'
 import { instance } from '../../redux/api/config'
+// import { editUser } from '../../redux/user/account'
 import {
   TextField,
 } from '@material-ui/core'
@@ -11,55 +14,52 @@ import MyButton from '../button'
 function ProfileForm() {
     const classes = useStyles()
      const [loading, setLoading] = useState(false)
+     const data = JSON.parse(localStorage.getItem('profile'))
+     const uid = data.result?._id
     const [values, setValues] = useState({
-      firstname: '',
-      lastname: '',
-      email:''
+      firstName: '',
+      lastName: '',
+      email: data.result?.email
+     
     })
     const handleChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value })
     }
-    const onSubmit =async (e) => {
+
+    const editUser = async (val)=>{
+      const res = await instance.put('/update', val)
+      console.log(res)
+    }
+    
+    const onSubmit = async (e)=>{
       e.preventDefault()
-      const profilePic = localStorage.getItem('profile-url')
-      const res = await instance.post('/update', {
-        ...values,
-        profilePic: `http://localhost:5000/${profilePic}`,
-      })
-      console.log(res.data)
+      editUser(values)
+//  dispatch(editUser(values))
+   
+      // const res = await instance.post('/update', values )
+      // console.log(res)
     }
     return (
       <div>
         <TextField
           id="outlined-multiline-flexible"
           className={classes.textField}
-          label="firstName"
-          name="firstname"
+          label="first Name"
+          name="firstName"
           multiline
           rowsMax={4}
-          value={values.firstname}
+          value={values.firstName}
           onChange={handleChange}
           variant="outlined"
         />
         <TextField
           id="outlined-multiline-flexible"
           className={classes.textField}
-          label="lastName"
-          name="lastname"
+          label="last Name"
+          name="lastName"
           multiline
           rowsMax={4}
-          value={values.lastname}
-          onChange={handleChange}
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-multiline-flexible"
-          className={classes.textField}
-          label="Email Address"
-          name="email"
-          multiline
-          rowsMax={4}
-          value={values.email}
+          value={values.lastName}
           onChange={handleChange}
           variant="outlined"
         />

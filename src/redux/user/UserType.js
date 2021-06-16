@@ -3,6 +3,9 @@ export const LOGOUT = 'LOGOUT'
 export const AUTH = 'AUTH'
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+export const EDIT_USER = 'EDIT_USER'
+
+
 
 // sign up
 export const SIGNUP_USER_REQUEST = 'SIGNUP_USER_REQUEST'

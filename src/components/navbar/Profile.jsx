@@ -47,7 +47,7 @@ export default function Profile({ logout }) {
             <span >Saved courses</span>
           </a>
           <hr />
-          <a href="#" onClick={logout}>
+          <a href="/" onClick={logout}>
             <ExitToAppIcon fontSize="small" />
             <span>Logout</span>
           </a>

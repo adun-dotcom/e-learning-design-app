@@ -660,7 +660,6 @@ export const CourseSection = styled.section`
   .pagination {
     position: absolute;
    bottom: -100px;
-    /* width: 816px; */
     height: 40px;
     list-style: none;
     display: flex;
@@ -699,10 +698,7 @@ export const CourseSection = styled.section`
     padding: 0;
     font-size: 28px;
   }
- 
-  @media (max-width:1300px){
-    .pagination:700px;
-  }
+
   @media (max-width: 1100px) {
     .search-filter {
       padding: 30px 0;

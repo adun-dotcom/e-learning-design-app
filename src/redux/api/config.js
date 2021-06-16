@@ -7,6 +7,7 @@ export const instance = axios.create({
 
 export const signIn = (values) => instance.post('/signin', values)
 export const signUp = (values) => instance.post('/signup', values)
+export const editUser = async (values)  => await instance.post('/update', values)
 // export const courses = ()=> instance.get('/courses' )
 
 // instance.interceptors.request.use(req=>{
